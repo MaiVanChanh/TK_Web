@@ -1,0 +1,4 @@
+1: Trang ch? có tên là chanh.html (có th? chuy?n h?t t?i các trang còn l?i)
+2: các chi ti?t s?n ph?m b?t d?u tên file là "a+ tên máy "
+3: các trang phân lo?i giá b?t d?u tên file là "gia1,gia2..."
+3: các trang phân lo?i máy b?t d?u tên file là "tên hãng (asus, dell...)"

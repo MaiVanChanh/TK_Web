@@ -1,0 +1,278 @@
+﻿<!DOCTYBE HTML>
+<html>
+   <head>
+	<meta charset="utf-8">
+       <title>CÔNG TY TNHH MVT MVC</title>
+	   <link rel="stylesheet" type="text/css" href="Quen.css">
+        
+	  <script language="javascript">
+		function KTTT(){
+			var HoTen=document.getElementById("hoten")
+				if(HoTen.value==""){
+					alert("Vui lòng nhập Họ và Tên.");
+					HoTen.focus();
+					return false;
+				}
+			
+			var Email=document.getElementById("email");
+				re=/\w+@\w+\.\w+/;
+				if(Email.value==""){
+					alert("Bạn chưa nhập Email.");
+					Email.focus();
+					return false;
+				}
+				else if(re.test(Email.value)==false){
+					alert("Email không đúng định dạng!");
+					Email.focus();
+					return false;
+				}
+			var TenDangNhap=document.getElementById("tendangnhap");
+				if(TenDangNhap.value==""){
+					alert("Bạn chưa nhập Tên Đăng Nhập.");
+					TenDangNhap.focus();
+					return false;
+				}
+			
+			alert("thông tin đã gửi về mail !!! vui lòng xác nhận");
+			return true;
+		}
+	</script>
+</head>
+
+	<body >
+<header>
+            <div align ="left"  id ="logo">
+           		<img src="123.jpg" width="300px">
+            </div>
+  <div align ="right"  id ="logo2">
+                 <marquee>
+                Trung Tâm sữa chửa và kinh doanh các mặt hàng công nghệ laptop Mai Văn Chánh xin kính chào quý khách !!!
+    </marquee>
+	  				<img src="dangnhap1.jpg" width="50px" height="30px"/>
+    <a href="Dangnhap.html">Đăng nhập  |</a>
+                    <img src="12.jpg" width="50" height="30" />
+  <a href="">Giỏ hàng(Trống)</a></div>
+  <img src="1234.png" width="1046" height="260" />
+   
+</header>
+<nav>
+ <div id="subnav">
+          <ul>
+            <li><a href="chanh.html">TRANG CHỦ </a></li>
+            <li id="vao"><a href="PhuKien.html">PHỤ KIỆN </a></li>
+            <li><a href="soluoc.html">THÔNG TIN</a></li>
+          </ul>
+
+         <marquee>
+                LAPTOP MVC     *****CHẤT LƯỢNG -  UY TÍN - DỊCH VỤ - GIÁ CẢ HỢP LÝ NHẤT !!!
+         </marquee>
+
+         <div>
+         
+         <input id="Timkiem" type="text" name="txtHoTen1"  placeholder="Tìm kiếm thông tin về sản phẩm ...">
+          <input type="submit" value="Tìm Kiếm" onClick="return KTTT1()">
+        </div>
+	</div>
+    
+</nav>
+                 
+ <script language="javascript">
+		function KTTT1(){
+			var TimKiem=document.getElementById("Timkiem")
+				if(TimKiem.value==""){
+					alert("vui lòng nhập thông tin tìm kiếm");
+					TimKiem.focus();
+					return false;
+				}
+		
+			alert("Xin lỗi cô em không biết disign dữ liệu cho ô này !!!");
+			return true;
+		}
+	</script>
+<div id="body">
+	
+	<article>
+	  <aside id="left">
+		  
+			<div class="calendar">
+					<script language="javascript">
+						monthnames = new Array("January","Februrary","March","April","May","June","Junly","August","September","Octobor","November","December");
+						var linkcount=0;
+						function addlink(month, day, href){
+							var entry = new Array(3);
+							entry[0]=month;
+							entry[1]=day;
+							entry[2]=href;
+							this[linkcount++]=entry;
+						}
+						Array.prototype.addlink=addlink;
+						linkdays=new Array();
+						monthdays=new Array(12);
+							monthdays[0]=31;
+							monthdays[1]=28;
+							monthdays[2]=31;
+							monthdays[3]=30;
+							monthdays[4]=31;
+							monthdays[5]=30;
+							monthdays[6]=31;
+							monthdays[7]=31;
+							monthdays[8]=30;
+							monthdays[9]=31;
+							monthdays[10]=30;
+							monthdays[11]=31;
+						todayDate=new Date();
+						thisday=todayDate.getDay();
+						thismonth=todayDate.getMonth();
+						thisdate=todayDate.getDate();
+						thisyear=todayDate.getYear();
+						thisyear=thisyear%100;
+						thisyear=((thisyear<50)?(2000+thisyear):(1900+thisyear));
+						if(((thisyear%4==0)&&!(thisyear%100==0))||(thisyear%400==0))
+							monthdays[1]++;
+						startspaces=thisdate;
+						while (startspaces>7)
+							startspaces-=7;
+						startspaces=thisday - startspaces + 1;
+						if(startspaces<0)
+							startspaces+=7;
+						document.write("<table>");
+						document.write("<tr><td colspan=7 class='monthyear'>"+monthnames[thismonth]+" "+thisyear+"</td></tr>");
+						
+						document.write("<tr class = 'weektitle'>");
+						document.write("<td >Sun</td>");
+						document.write("<td >Mon</td>");
+						document.write("<td >Tus</td>");
+						document.write("<td >Wed</td>");
+						document.write("<td >Thu</td>");
+						document.write("<td >Fri</td>");
+						document.write("<td >Sat</td>");
+						document.write("</tr>");
+						
+						
+						document.write("<tr>");
+						for(s=0;s<startspaces;s++){
+							document.write("<td> </td>");
+						}
+						count=1;
+						while (count<=monthdays[thismonth]){
+							for(b=startspaces;b<7;b++){
+								linktrue=false;
+								document.write("<td class='weekday'>");
+								for(c=0;c<linkdays.length;c++){
+									if(linkdays[c]!=null){
+										if((linkdays[c][0]==thismonth+1)&&(linkdays[c][1]==count)){
+											document.write("<a href=\""+linkdays[c][2]+"\">");
+											linktrue=true;
+										}
+									}
+								}
+								if(count==thisdate){
+									document.write("<font color='FF0000'><strong>");
+								}
+								if(count<=monthdays[thismonth]){
+									document.write(count);
+								}
+								else{
+									document.write(" ");
+								}
+								if(count==thisdate){
+									document.write("</strong></font>");
+								}
+								if(linktrue)
+									document.write("</a>");
+								document.write("</td>");
+								count++;
+							}
+							document.write("</tr>");
+							document.write("<tr>");
+							startspaces=0;
+						}
+						document.write("</table>");
+						
+					</script>
+				</div>     
+                 <div>
+           	  <img src="12.gif" width="210px" height="130px;" >
+            </div>
+
+	  </aside>
+      
+		
+			<section  >
+			 <p>LẤY LẠI MẬT KHẨU</p>
+			  <form action="#" name="dangky" method="post" onSubmit="return KTTT()">
+			    <div align="center">
+				<fieldset  ><legend  align="center"><b> Thông tin cá nhân</b></legend>
+       
+		<table width="500" border="1" cellpadding="0">
+			<tr><td>Họ và tên:</td><td><input id="hoten" type="text" name="txtHoTen"></td></tr>
+		
+		<tr><td>Điện thoại:</td><td><input type="tel"></td></tr>
+		<tr><td>Email:</td><td><input id="email" name="txtEmail" type="email" required></td></tr>
+        <tr><td>Tên đăng nhập:</td><td><input id="tendangnhap" name="txtTenDangNhap" type="text" required></td></tr>
+			</table>
+		</fieldset >
+
+	<p align="center">
+		<input type="submit" value="Gửi" onClick="return KTTT()">
+        
+        
+		<button type="cancel" onClick="window.location='DangNhap.html';return false;">Đăng Nhập</button>
+	</p>
+    </div>
+	</form>
+				                                           
+
+
+</section>
+		
+		<aside id="right">
+	
+		<div id="lienketwebsite">
+                <p>
+                LIÊN KẾT WEBSITE
+                </p>
+                <select
+                onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+                <option selected>---Chọn Trang Liên Kết---</option>
+                <option value="https://tdmu.edu.vn/">ĐH Thủ Dầu Một</option>
+                <option value="https://tdmu.edu.vn/khoa-hoc-cong-nghe">Khoa KT-CN</option>
+                </select>
+		</div>
+			<div id="TKTC">
+              <p>TRUY CẬP</p>
+              <h4>Tổng truy cập:13120</h4>
+              <h4>Đang online:4233</h4>
+			</div>
+           
+		</aside>
+  </article>
+</div>
+
+</style>
+    <div class="float-contact">
+    <button class="chat-zalo">
+    <a href="http://zalo.me/0367979432">Chat Zalo</a>
+    </button>
+    <button class="chat-face">
+    <a href="https://www.facebook.com/messages/t/100009393901983">Chat Facebook</a>
+    </button>
+    <button class="hotline">
+    <a href="tel:0961089798">Hotline: 096.180.97.98</a>
+    </button>
+    
+    
+    
+</div>
+
+
+
+
+<footer>
+	<p><B>Công Ty TNHH MVT MVC chuyên cung cấp các loại laptop</B></p>
+	<p>Được phục vụ và tư vấn quý khách là niềm vinh hạnh của chúng tôi</p>
+	<p >Email: maivanchanh321@gmail.com</p><p >hotline:036.7979.432-096.108.97.98</p>
+</footer>
+
+</body>
+</html>

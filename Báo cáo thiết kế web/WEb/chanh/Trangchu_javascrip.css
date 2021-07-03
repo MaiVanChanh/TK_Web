@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+aside#slide{
+	background-color:#333;
+	margin-left: 50px;
+	width: 96%;
+}
+
+.slide-pager{
+	
+	position: relative;
+}
+.slide-control-prev {
+	position: absolute;
+	text-align: center;
+	width: 25px;
+	height: 60px;
+	background: #00C;
+	line-height: 60px;
+	color: #F66;
+	cursor: pointer;
+	top: 102px;
+	left: -34px;
+	z-index: 1000;
+}
+
+.slide-control-next {
+	position: absolute;
+	text-align: center;
+	width: 25px;
+	height: 60px;
+	background: #00C;
+	line-height: 60px;
+	color: #F66;
+	cursor: pointer;
+	right: 34px;
+	top: 102px;
+	z-index: 1000;
+}
+
+.slide-container {
+	height: 205px;
+	width: 94%;
+	overflow: hidden;/*dấu đi chiều cao bị thừa*/
+	position: relative;/*định vị trí cho thành phần trong*/
+}
+
+.slide-stage {
+	
+	position: absolute;/*ngoài*/
+}
+
+.slide-image {
+	float: right;
+	width: 200px;
+	text-align: center;
+}
+
+.slide-image img{
+	width: 200px;
+	height: 200px;
+	margin:0 auto;
+}
